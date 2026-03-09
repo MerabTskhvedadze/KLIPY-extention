@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Klipy Extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension built with React and Vite",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Klipy"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.klipy.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
