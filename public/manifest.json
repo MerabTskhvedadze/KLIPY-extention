@@ -2,28 +2,37 @@
   "manifest_version": 3,
   "name": "Klipy Extension",
   "version": "1.0.0",
-  "description": "A Chrome extension built with React and Vite",
+  "description": "Send Klipy GIFs to Facebook chat",
   "action": {
-    "default_popup": "popup.html",
     "default_title": "Klipy"
   },
   "background": {
     "service_worker": "service-worker.js"
   },
   "permissions": [
-    "storage"
+    "tabs",
+    "activeTab",
+    "sidePanel"
   ],
   "host_permissions": [
-    "https://api.klipy.com/*"
+    "https://api.klipy.com/*",
+    "https://static.klipy.com/*",
+    "https://www.facebook.com/*",
+    "https://www.messenger.com/*"
   ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "https://www.facebook.com/*",
+        "https://www.messenger.com/*"
       ],
       "js": [
         "content.js"
-      ]
+      ],
+      "run_at": "document_idle"
     }
   ]
 }
