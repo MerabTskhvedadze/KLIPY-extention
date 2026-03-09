@@ -22,11 +22,3 @@ A Chrome extension for sending **GIFs, stickers, and clips** in chat using the *
 
 The extension loads media from the KLIPY API and lets users pick content from the extension UI.  
 Selected GIFs can then be inserted or attached into supported chat interfaces.
-
-## Installation
-
-### 1. Clone the project
-
-```bash
-git clone <your-repo-url>
-cd <your-project-folder>
